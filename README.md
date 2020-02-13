@@ -1,6 +1,8 @@
 # Repository using AWS
 > lists of repository using AWS services
 
+## selected sources: phonebook upload using S3, Netflix demo
+
 1.	사용 서비스: EC2, RDS
 
     내용: Netflix 회원가입 만들어보기  
@@ -41,3 +43,4 @@
     사용 서비스: EC2, S3, Lambda, IAM, CloudFormation 등등  
     내용 : aws 사용 초보자 대상으로(대략 6-7시간 소요 예상) 여러 서비스를 사용한 웹 사이트 구축하기  
     링크 : https://github.com/aws-samples/aws-modern-application-workshop
+    
