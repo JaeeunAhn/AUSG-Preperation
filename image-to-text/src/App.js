@@ -5,7 +5,7 @@ import Form from './components/Form'
 export default function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [result, setResult] = useState('')
-  
+
   const setLoadingStatus = (status) => {
     setIsLoading(status)
   }
@@ -13,7 +13,7 @@ export default function App() {
   const getResult = (result) => {
     setResult(result)
   }
-  
+
   return (
     <div className='App'>
       {isLoading ?
@@ -23,9 +23,12 @@ export default function App() {
           setLoadingStatus={setLoadingStatus}
         />
       }
-      {result &&
-        <div>{result}</div>
-      }
+      {result !== '' && result.map((result, index) => (
+        <div key={index}>
+          <h3>{result.Type}</h3>
+          <div>{result.DetectedText}</div>
+        </div>
+      ))}
     </div>
   )
 }

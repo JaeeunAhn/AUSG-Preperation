@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 export default function Form(props) {
   const [imageURL, setImageURL] = useState('')
@@ -7,9 +8,21 @@ export default function Form(props) {
     setImageURL(e.target.value)
   }
 
-  const onSubmitButtonClicked = () => {
-    // TODO: call server
-    props.getResult(imageURL)
+  const onSubmitButtonClicked = async () => {
+    // 로딩 상태로 변경합니다.
+    props.setLoadingStatus(true)
+    // express 서버에 imageURL에 대해 요청합니다.
+    const result = await axios.get(
+      'http://localhost:3001/detectImage/?imageURL=' + encodeURIComponent(imageURL),
+      console.log("제대로 들어가는지 체킹")
+    )
+    // 결과를 받아옵니다.
+    const detectionResultArray = result.data.detectionResult.TextDetections
+    console.log('result', result)
+    // App.js에 result로 전달합니다.
+    props.getResult(detectionResultArray)
+    // 로딩 상태를 해제합니다.
+    props.setLoadingStatus(false)
   }
   
   return (
