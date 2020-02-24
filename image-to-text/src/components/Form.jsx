@@ -15,7 +15,6 @@ export default function Form(props) {
     // express 서버에 imageURL에 대해 요청합니다.
     const result = await axios.get(
       'http://localhost:3001/detectImage/?imageURL=' + encodeURIComponent(imageURL),
-      console.log("제대로 들어가는지 체킹")
     )
     // 결과를 받아옵니다.
     const detectionResultArray = result.data.detectionResult.TextDetections
@@ -39,7 +38,7 @@ export default function Form(props) {
 
       <div className="form">
         <div className="create-button" onClick={onSubmitButtonClicked}>
-          등록
+          검색
         </div>
       </div>
     </>
