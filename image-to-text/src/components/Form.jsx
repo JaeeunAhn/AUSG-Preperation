@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import './Form.css'
 import axios from 'axios'
 
 export default function Form(props) {
   const [imageURL, setImageURL] = useState('')
-  
+
   const onURLChanged = (e) => {
     setImageURL(e.target.value)
   }
@@ -24,7 +25,7 @@ export default function Form(props) {
     // 로딩 상태를 해제합니다.
     props.setLoadingStatus(false)
   }
-  
+
   return (
     <>
       <input
@@ -35,6 +36,12 @@ export default function Form(props) {
       <button onClick={onSubmitButtonClicked}>
         submit
       </button>
+
+      <div className="form">
+        <div className="create-button" onClick={onSubmitButtonClicked}>
+          등록
+        </div>
+      </div>
     </>
   )
 }
