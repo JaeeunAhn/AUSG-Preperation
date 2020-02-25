@@ -41,6 +41,12 @@ export default function Form(props) {
           검색
         </div>
       </div>
+
+      <div className="form">
+        <div className="create-button" onClick={onSubmitButtonClicked}>
+          검색
+        </div>
+      </div>
     </>
   )
 }
