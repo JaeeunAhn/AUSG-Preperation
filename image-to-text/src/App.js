@@ -17,7 +17,7 @@ export default function App() {
   return (
     <div className='App'>
       {isLoading ?
-        <div>Loading....</div> :
+        <div>검색 중입니다</div> :
         <Form
           getResult={getResult}
           setLoadingStatus={setLoadingStatus}
